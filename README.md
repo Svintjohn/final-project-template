@@ -2,7 +2,8 @@
   This is your project's front page. Replace every placeholder below.
   It is the first thing your instructor and any future employer will read, and
   the live link in it is how your project gets opened for grading.
-  Delete this comment when you are done.
+
+  New here? Read START-HERE.md first. Delete this comment when you are done.
 -->
 
 # App Name
@@ -55,11 +56,12 @@ Three to five bullets. What can a user actually do?
 
 ```bash
 flutter pub get
-cp .env.example .env      # then fill in your own values, see below
+cp .env.example .env      # only if your app needs keys, see below
 flutter run -d web-server --web-port 8080
 ```
 
-Requires Flutter (run `flutter --version` and put yours here).
+Then open http://localhost:8080. Requires Flutter (run `flutter --version` and
+put yours here).
 
 ### Environment variables
 
@@ -91,6 +93,7 @@ Required section. Two or three honest sentences:
 | [Design system](docs/03-design-system.md) | colors, type, spacing, components |
 | [Weekly reports](docs/04-weekly-reports.md) | what happened each week |
 | [Demo video](docs/05-demo-video.md) | the recording and what it shows |
+| [Start here](START-HERE.md) | how this repo works (delete once you have read it) |
 | [Security and privacy](docs/06-security-and-privacy.md) | the checklist, filled in |
 
 ## Status and what is next

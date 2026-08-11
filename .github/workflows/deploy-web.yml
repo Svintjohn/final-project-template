@@ -57,9 +57,14 @@ jobs:
       - if: steps.check.outputs.ready == 'true'
         run: flutter pub get
 
-      # Optional but worth keeping: a red build tells you before your grader finds out.
+      # Neither of these blocks your deploy: a failing test should not take your
+      # live link down. They are here so you find out before your grader does.
       - if: steps.check.outputs.ready == 'true'
         run: flutter analyze --no-fatal-infos
+        continue-on-error: true
+
+      - if: steps.check.outputs.ready == 'true'
+        run: flutter test
         continue-on-error: true
 
       - name: Build web
