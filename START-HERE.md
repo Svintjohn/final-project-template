@@ -59,19 +59,17 @@ Put that URL at the top of your README. **It is how your project gets opened and
 graded.** If it does not load, your app was not seen.
 
 **4. Tell the course where it is.** In your **workspace repo** (the
-`student-6ADET-...` one), go to the `project/` folder and **create a new file
-called `README.md`** with your project repository's URL in it. One line is
-enough:
+`student-6ADET-...` one), open
+`content/final-project-revision/project-README-template.md`, copy it into the
+`project/` folder as `README.md`, and fill in your two links.
 
-```markdown
-Final project: https://github.com/yourusername/your-repo-name
-```
+On GitHub that is: open `project/`, click **Add file > Create new file**, name
+it `README.md`, paste, commit. That folder starts with only `PROPOSAL.md` in it,
+so you are adding this one.
 
-That folder currently only has `PROPOSAL.md`, so you are adding the README
-yourself. The pointer is private and it is how your public repo gets matched to
-you.
-There is no `student.json` in this project and there must not be one: this repo
-is public, so your name and student number stay out of it.
+The pointer is private and it is how your public repo gets matched to you. There
+is no `student.json` in this project and there must not be one: this repo is
+public, so your name and student number stay out of it.
 
 **5. Move your documents in.** Everything you have already written for the
 planning activities belongs in `docs/`. See the next section.
