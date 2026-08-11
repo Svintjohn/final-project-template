@@ -1,0 +1,95 @@
+name: Deploy web demo
+
+# Builds the Flutter web app and publishes it to GitHub Pages on every push to
+# main, so the link in your README is always your latest commit.
+#
+# Before this works, turn Pages on once: repository Settings > Pages >
+# Build and deployment > Source: GitHub Actions.
+#
+# SECRETS: anything your app needs at build time goes in
+# Settings > Secrets and variables > Actions, and is passed in with --dart-define
+# below. Never write a key literally in this file: it is public.
+#
+# Understand what deploying does: values compiled into a web build are readable
+# by anyone who visits the site. Ship project identifiers (a Supabase anon key, a
+# Firebase config) whose data is protected by rules. Do not ship a billable API
+# key you would mind a stranger using.
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    outputs:
+      ready: ${{ steps.check.outputs.ready }}
+    steps:
+      - uses: actions/checkout@v7
+
+      # A fresh copy of the template has no Flutter app in it yet. Skip quietly
+      # rather than failing, so your repo is not red before you have written
+      # anything. Once pubspec.yaml exists, every push deploys.
+      - id: check
+        run: |
+          if [ -f pubspec.yaml ]; then
+            echo "ready=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "ready=false" >> "$GITHUB_OUTPUT"
+            echo "::notice::No pubspec.yaml yet. Add your Flutter app and this workflow will deploy it."
+          fi
+
+      - if: steps.check.outputs.ready == 'true'
+        uses: subosito/flutter-action@v2
+        with:
+          channel: stable
+
+      - if: steps.check.outputs.ready == 'true'
+        run: flutter pub get
+
+      # Optional but worth keeping: a red build tells you before your grader finds out.
+      - if: steps.check.outputs.ready == 'true'
+        run: flutter analyze --no-fatal-infos
+        continue-on-error: true
+
+      - name: Build web
+        if: steps.check.outputs.ready == 'true'
+        env:
+          # Uncomment and rename to match the secrets you actually created.
+          # GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          # SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          # SUPABASE_ANON_KEY: ${{ secrets.SUPABASE_ANON_KEY }}
+          DUMMY: unused
+        # --base-href matters: on a project page the site lives at
+        # username.github.io/<repo>/, and without it every asset 404s and you get
+        # a white screen.
+        run: |
+          flutter build web --release \
+            --base-href "/${{ github.event.repository.name }}/"
+          # add one --dart-define=NAME=$NAME line per secret you uncommented above
+
+      - if: steps.check.outputs.ready == 'true'
+        uses: actions/upload-pages-artifact@v5
+        with:
+          path: build/web
+
+  deploy:
+    needs: build
+    if: needs.build.outputs.ready == 'true'
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v5
