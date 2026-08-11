@@ -21,6 +21,9 @@ name: Deploy web demo
 #
 # Whatever you do pass in, put it in Settings > Secrets and variables > Actions
 # and reference it below. Never write a key literally in this file: it is public.
+#
+# Step by step, with the Dart side and the usual mistakes: page 12 of
+# content/extending-your-app/ in your course workspace.
 
 on:
   push:

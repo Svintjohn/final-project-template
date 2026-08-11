@@ -58,6 +58,11 @@ in this repository, so every push to `main` rebuilds your site at
 Put that URL at the top of your README. **It is how your project gets opened and
 graded.** If it does not load, your app was not seen.
 
+If your app needs configuration at build time (a Supabase URL, for example),
+your `.env` is git-ignored so the runner cannot see it. You hand those values
+over as **repository secrets**, and page 12 in your workspace walks through it
+end to end.
+
 **This works even if your app uses Firebase or Supabase.** Your app calls them
 from the browser, and the values it ships (the Firebase config, the Supabase
 publishable key) are documented by both vendors as safe to expose. Your security

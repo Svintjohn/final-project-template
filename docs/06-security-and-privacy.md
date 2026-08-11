@@ -15,7 +15,9 @@ part of grading.
 
 - Values my app needs at run time: _(list the names, not the values)_
 - Where they live locally: `.env`, which is git-ignored
-- Where the deploy workflow gets them: repository secrets
+- Where the deploy workflow gets them: repository secrets (Settings > Secrets
+  and variables > Actions; the walkthrough is on page 12 of
+  `content/extending-your-app/` in your workspace)
 - Anything my deployed web build carries that a visitor could read, and why that
   is acceptable: _(a Supabase anon key protected by RLS, a Firebase config
   protected by rules, or nothing)_
