@@ -75,32 +75,35 @@ first screen, and write your first weekly report in
 
 ## Your planning documents live here too
 
-You submitted your proposal, wireframes and design system through Canvas, and
-you will keep submitting the revised versions that way. **Those submissions do
-not stop mattering once they are graded.** This repository is where the current
-version of each one lives, so that a reader has the plan and the code in one
-place.
+You submit your proposal, mockup and design system through Canvas, and that does
+not change. This repository is where the **final** version of each one ends up,
+so that whoever reads your project gets the plan and the code in one place.
 
-So copy each one into `docs/` and keep it up to date as the project changes:
+**You do not have to keep these in sync while you work.** Nobody reads this
+folder until you submit the finished project. Drop in the version you handed to
+Canvas, and put the final version here when the project is done. If the plan
+changes a lot along the way, update it then, not every week.
+
+The one exception is `04-weekly-reports.md`, which is only useful if you write it
+as you go.
+
+Here is where each one lives:
 
 | Canvas activity | Lives here as |
 | --- | --- |
 | Proposal (m6a1, revised in m7a1) | `docs/01-proposal.md` |
-| Wireframes (m6a2, revised in m7a2) | `docs/02-wireframes.md` |
+| Wireframes (m6a2) and the mockup (m7a2) | `docs/02-mockup.md` plus the images |
 | Design system (m6a3, revised in m7a3) | `docs/03-design-system.md` plus the PDF |
 | Weekly reports | `docs/04-weekly-reports.md` |
 | Demo video | `docs/05-demo-video.md` |
 | Security and privacy checklist | `docs/06-security-and-privacy.md` |
 
-Each of those files has a "Changes since the last version" section at the
-bottom. Add a dated line whenever the plan moves. That log is worth more to a
-reader than a perfect document, because it shows judgement.
-
-**Your design system needs a visual, not only text.** A PDF or an image showing
-your palette, type scale, spacing and components, exported from Figma, Canva,
-Excalidraw, Google Slides or anything else. Put it in `docs/assets/` and link it
-from `docs/03-design-system.md`. A markdown table on its own is not a design
-system, it is notes about one.
+**Two of these are pictures, not documents.** Your mockup is images of your
+screens in colour, and your design system needs a visual too. Export a PDF or image of your
+palette, type scale, spacing and components from Figma, Canva, Excalidraw,
+Google Slides or anything else, put it in `docs/assets/`, and link it from
+`docs/03-design-system.md`. A markdown table on its own is not a design system,
+it is notes about one.
 
 ## Two repositories, and what each is for
 
@@ -127,8 +130,8 @@ messages belong in a public repo, in your sample data or in your screenshots.
 
 - [ ] The live link in the README opens and every screen is reachable.
 - [ ] Screenshots in the README are real and current.
-- [ ] `docs/` is filled in: proposal, wireframes, design system plus its visual,
-      weekly reports, video.
+- [ ] `docs/` holds the final version of each document: proposal, mockup images,
+      design system plus its visual, weekly reports, video.
 - [ ] `docs/06-security-and-privacy.md` is complete and dated.
 - [ ] Your workspace `project/README.md` links here.
 - [ ] `flutter analyze` is clean.

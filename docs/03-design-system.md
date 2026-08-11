@@ -1,7 +1,8 @@
 # Design system
 
-Paste in your revised design system (the m7a3 worksheet). This is the reference
-you open every time you build a new screen.
+Paste in the design system you submitted, and replace it with the final version
+when the project is done. It is also the reference you open every time you build
+a new screen, so keeping it current helps you more than it helps anyone reading.
 
 **This document needs a visual, not just this text.** Export a PDF or an image
 that *shows* your palette, type scale, spacing and components, put it in

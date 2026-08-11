@@ -89,7 +89,7 @@ Required section. Two or three honest sentences:
 | Document | |
 | --- | --- |
 | [Proposal](docs/01-proposal.md) | the problem, the users, the scope |
-| [Wireframes](docs/02-wireframes.md) | screens and navigation |
+| [Mockup and wireframes](docs/02-mockup.md) | what it looks like, and the screen flow |
 | [Design system](docs/03-design-system.md) | colors, type, spacing, components |
 | [Weekly reports](docs/04-weekly-reports.md) | what happened each week |
 | [Demo video](docs/05-demo-video.md) | the recording and what it shows |
