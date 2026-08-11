@@ -6,14 +6,21 @@ name: Deploy web demo
 # Before this works, turn Pages on once: repository Settings > Pages >
 # Build and deployment > Source: GitHub Actions.
 #
-# SECRETS: anything your app needs at build time goes in
-# Settings > Secrets and variables > Actions, and is passed in with --dart-define
-# below. Never write a key literally in this file: it is public.
+# CONFIG AND SECRETS. Values compiled into a web build are readable by anyone who
+# visits the site, so it matters which kind you are shipping:
 #
-# Understand what deploying does: values compiled into a web build are readable
-# by anyone who visits the site. Ship project identifiers (a Supabase anon key, a
-# Firebase config) whose data is protected by rules. Do not ship a billable API
-# key you would mind a stranger using.
+#   Safe to ship: project identifiers whose data is protected by rules, i.e. the
+#   Firebase config in firebase_options.dart and the Supabase URL plus publishable
+#   key. Both vendors document these as safe to expose in a client. Your Firestore
+#   rules and your Supabase RLS policies are what actually protect the data.
+#
+#   NOT safe to ship: anything billable or privileged. A Gemini API key, a
+#   Supabase secret (service_role) key, a service account JSON. A stranger can
+#   read these off your deployed site and spend your quota. Keep those features
+#   local and demo them on video, or put a server in front.
+#
+# Whatever you do pass in, put it in Settings > Secrets and variables > Actions
+# and reference it below. Never write a key literally in this file: it is public.
 
 on:
   push:
@@ -77,10 +84,9 @@ jobs:
       - name: Build web
         if: steps.check.outputs.ready == 'true'
         env:
-          # Uncomment and rename to match the secrets you actually created.
-          # GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          # Uncomment to match the repository secrets you actually created.
           # SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
-          # SUPABASE_ANON_KEY: ${{ secrets.SUPABASE_ANON_KEY }}
+          # SUPABASE_PUBLISHABLE_KEY: ${{ secrets.SUPABASE_PUBLISHABLE_KEY }}
           DUMMY: unused
         # --base-href matters: on a project page the site lives at
         # username.github.io/<repo>/, and without it every asset 404s and you get

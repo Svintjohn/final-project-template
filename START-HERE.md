@@ -50,24 +50,25 @@ You should see the "It works" screen inside a phone frame. That frame is
 `device_preview`, the same one from Modules 4 and 5, and it disappears
 automatically in the deployed build.
 
-**3. Get a live link.** Your app needs a URL someone can open. **Where you host
-it is up to you**; this template just comes with the easiest option already
-wired.
-
-The zero-setup route, GitHub Pages: in your new repository go to **Settings >
-Pages > Build and deployment > Source: GitHub Actions**. That is the only click
-needed. Every push to `main` then rebuilds your site at
+**3. Turn on the live link.** Go to **Settings > Pages > Build and deployment >
+Source: GitHub Actions**. That is the only click needed. The workflow is already
+in this repository, so every push to `main` rebuilds your site at
 `https://yourusername.github.io/your-repo-name/`.
 
-Firebase Hosting, Netlify, Vercel and Cloudflare Pages are all free and all fine
-too. If you use one of them, ignore or delete the included workflow. And yes,
-static hosting works with Firebase and Supabase: your app calls them from the
-browser. See page 12 of `content/extending-your-app/` in your workspace, which
-also covers the one setting each of them needs before auth works on a deployed
-site.
+Put that URL at the top of your README. **It is how your project gets opened and
+graded.** If it does not load, your app was not seen.
 
-Put whatever URL you end up with at the top of your README. **It is how your
-project gets opened and graded.** If it does not load, your app was not seen.
+**This works even if your app uses Firebase or Supabase.** Your app calls them
+from the browser, and the values it ships (the Firebase config, the Supabase
+publishable key) are documented by both vendors as safe to expose. Your security
+rules protect the data, not the hosting. Page 12 in your workspace has the
+detail, plus the one setting each needs before sign-in works on a deployed site.
+
+**You may deploy somewhere else if you have a reason.** The main one: static
+hosting cannot run a server of your own, so if you write your own backend, or
+need a proxy to hold a billable key, use a host that runs processes (Render,
+Railway, Fly, a Supabase Edge Function) and say which in your README. Firebase
+Hosting, Netlify, Vercel and Cloudflare Pages are all fine too.
 
 If your app truly cannot run on the web (camera, sensors, a plugin with no web
 support), say so in the README and hand in the APK plus your demo video
