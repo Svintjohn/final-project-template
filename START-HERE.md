@@ -50,6 +50,11 @@ You should see the "It works" screen inside a phone frame. That frame is
 `device_preview`, the same one from Modules 4 and 5, and it disappears
 automatically in the deployed build.
 
+**Want to see where this ends up?** This template's own build is deployed at
+https://hau-6adet.github.io/final-project-template/ by the workflow in step 3.
+That is the same screen, released, with no phone frame. Yours will look like
+that at your own address once you turn Pages on.
+
 **3. Turn on the live link.** Go to **Settings > Pages > Build and deployment >
 Source: GitHub Actions**. That is the only click needed. The workflow is already
 in this repository, so every push to `main` rebuilds your site at
