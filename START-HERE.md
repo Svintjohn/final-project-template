@@ -50,13 +50,28 @@ You should see the "It works" screen inside a phone frame. That frame is
 `device_preview`, the same one from Modules 4 and 5, and it disappears
 automatically in the deployed build.
 
-**3. Turn on the live link.** In your new repository: **Settings > Pages >
-Build and deployment > Source: GitHub Actions**. That is the only click needed.
-Every push to `main` now rebuilds your site at
+**3. Get a live link.** Your app needs a URL someone can open. **Where you host
+it is up to you**; this template just comes with the easiest option already
+wired.
+
+The zero-setup route, GitHub Pages: in your new repository go to **Settings >
+Pages > Build and deployment > Source: GitHub Actions**. That is the only click
+needed. Every push to `main` then rebuilds your site at
 `https://yourusername.github.io/your-repo-name/`.
 
-Put that URL at the top of your README. **It is how your project gets opened and
-graded.** If it does not load, your app was not seen.
+Firebase Hosting, Netlify, Vercel and Cloudflare Pages are all free and all fine
+too. If you use one of them, ignore or delete the included workflow. And yes,
+static hosting works with Firebase and Supabase: your app calls them from the
+browser. See page 12 of `content/extending-your-app/` in your workspace, which
+also covers the one setting each of them needs before auth works on a deployed
+site.
+
+Put whatever URL you end up with at the top of your README. **It is how your
+project gets opened and graded.** If it does not load, your app was not seen.
+
+If your app truly cannot run on the web (camera, sensors, a plugin with no web
+support), say so in the README and hand in the APK plus your demo video
+instead.
 
 **4. Tell the course where it is.** In your **workspace repo** (the
 `student-6ADET-...` one), open
@@ -133,7 +148,8 @@ messages belong in a public repo, in your sample data or in your screenshots.
 
 ## The final check, before you send the link
 
-- [ ] The live link in the README opens and every screen is reachable.
+- [ ] The live link in the README opens and every screen is reachable (or the
+      README explains why there is an APK and a video instead).
 - [ ] Screenshots in the README are real and current.
 - [ ] `docs/` holds the final version of each document: proposal, mockup images,
       design system plus its visual, weekly reports, video.

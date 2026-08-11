@@ -10,7 +10,7 @@
 
 > One sentence: what this app does, and who it is for.
 
-**Live demo:** https://YOURUSERNAME.github.io/YOUR-REPO/
+**Live demo:** <!-- your URL, hosted anywhere: GitHub Pages, Firebase Hosting, Netlify, Vercel, Cloudflare Pages -->
 **Demo video:** `docs/demo.mp4` (link it here once it exists)
 **Course:** Applications Development and Emerging Technologies (6ADET), Holy Angel University
 **Author:** Your Name
