@@ -59,10 +59,17 @@ Put that URL at the top of your README. **It is how your project gets opened and
 graded.** If it does not load, your app was not seen.
 
 **4. Tell the course where it is.** In your **workspace repo** (the
-`student-6adet-...` one), open `project/README.md` and paste your project
-repository's URL there.
+`student-6ADET-...` one), go to the `project/` folder and **create a new file
+called `README.md`** with your project repository's URL in it. One line is
+enough:
 
-That pointer is private and it is how your public repo gets matched to you.
+```markdown
+Final project: https://github.com/yourusername/your-repo-name
+```
+
+That folder currently only has `PROPOSAL.md`, so you are adding the README
+yourself. The pointer is private and it is how your public repo gets matched to
+you.
 There is no `student.json` in this project and there must not be one: this repo
 is public, so your name and student number stay out of it.
 
@@ -109,7 +116,7 @@ it is notes about one.
 
 You now have two, and they do different jobs.
 
-| | Your workspace repo (`student-6adet-...`) | This project repo |
+| | Your workspace repo (`student-6ADET-...`) | This project repo |
 | --- | --- | --- |
 | Who owns it | the course organisation | you |
 | Visibility | private | public |
@@ -133,7 +140,7 @@ messages belong in a public repo, in your sample data or in your screenshots.
 - [ ] `docs/` holds the final version of each document: proposal, mockup images,
       design system plus its visual, weekly reports, video.
 - [ ] `docs/06-security-and-privacy.md` is complete and dated.
-- [ ] Your workspace `project/README.md` links here.
+- [ ] You created `project/README.md` in your workspace and it links here.
 - [ ] `flutter analyze` is clean.
 - [ ] A stranger could clone it, follow your README, and run it.
 - [ ] You deleted this file.
