@@ -47,13 +47,17 @@ flutter run -d web-server --web-port 8080
 ```
 
 You should see the "It works" screen inside a phone frame. That frame is
-`device_preview`, the same one from Modules 4 and 5, and it disappears
-automatically in the deployed build.
+`device_preview`, the same one from Modules 4 and 5.
+
+**It stays on in the deployed build too**, on purpose: your live link gets opened
+on a desktop browser, and a phone layout stretched across a wide window looks
+broken when it is not framed. The toolbar also lets whoever opens it switch
+device and orientation. If you would rather ship the clean app with no frame,
+`lib/main.dart` says exactly which line to change.
 
 **Want to see where this ends up?** This template's own build is deployed at
 https://hau-6adet.github.io/final-project-template/ by the workflow in step 3.
-That is the same screen, released, with no phone frame. Yours will look like
-that at your own address once you turn Pages on.
+Yours will look like that at your own address once you turn Pages on.
 
 **3. Turn on the live link.** Go to **Settings > Pages > Build and deployment >
 Source: GitHub Actions**. That is the only click needed. The workflow is already
