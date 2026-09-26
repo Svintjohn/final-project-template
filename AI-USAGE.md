@@ -11,25 +11,25 @@ looks exactly like what it is.
 
 At least six entries. One per real use. Every entry needs a commit link.
 
-### YYYY-MM-DD - short title
+### 2026-09-25 - RE-DO my code because I have not yet published it on GITHUB 
 
-- **Tool:**
-- **What I asked for:**
-- **What it gave back:**
+- **Tool:** Gemini AI
+- **What I asked for:** I asked how to make the structure of making an app using DART and Flutter as backend and Python as Backend
+- **What it gave back:** It gave me a visual representation of how the app works but it does not tell me how to integrate it in github
 - **What I kept, what I changed, and why:**
-- **Commit:** https://github.com/YOUR-USERNAME/YOUR-REPO/commit/SHA
+- **Commit:** https://github.com/Svintjohn/Aegis_FNL/commit/91ddd77065bb53e39ff065a9ce0189e2e7747b24
 
 ## 2. Where the AI got it wrong
 
 Three cases. Be specific. If you write that the AI was never wrong, this section
 scores zero.
 
-### Case 1 - short title
+### Case 1 - REST architecture and workspace setup
 
-- **What it gave me:**
-- **What was wrong with it:**
-- **What I did instead:**
-- **Commit:** https://github.com/YOUR-USERNAME/YOUR-REPO/commit/SHA
+- **What it gave me:** It gave me visual representation of a REST architecture. 
+- **What was wrong with it:** It does not really tell me how to set up the front and back end of my code and app.
+- **What I did instead:** I have to look for external source to check and see how it works
+- **Commit:** https://github.com/Svintjohn/Aegis_FNL/commit/91ddd77065bb53e39ff065a9ce0189e2e7747b24
 
 ## 3. Who wrote what
 
