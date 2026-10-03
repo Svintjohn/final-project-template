@@ -14,22 +14,22 @@ At least six entries. One per real use. Every entry needs a commit link.
 ### YYYY-MM-DD - short title
 
 - **Tool:**
-- **What I asked for:**
-- **What it gave back:**
-- **What I kept, what I changed, and why:**
-- **Commit:** https://github.com/YOUR-USERNAME/YOUR-REPO/commit/SHA
+- **What I asked for:** I asked to build the scaffold of the project.
+- **What it gave back:** It gave the command in VS code that needs to build the scaffolding of the file
+- **What I kept, what I changed, and why:** It actually gave me a PNG it generates a scaffolding image of the folder.
+- **Commit:** (https://github.com/Svintjohn/Aegis_FNL/commit/f937dce73a4552bdebbf200e706d22840518fb5b)
 
 ## 2. Where the AI got it wrong
 
 Three cases. Be specific. If you write that the AI was never wrong, this section
 scores zero.
 
-### Case 1 - short title
+### Case 1 - SUPABASE FAILED
 
-- **What it gave me:**
-- **What was wrong with it:**
-- **What I did instead:**
-- **Commit:** https://github.com/YOUR-USERNAME/YOUR-REPO/commit/SHA
+- **What it gave me:** It teaches me how to build or use SUPABASE so I can integrate it on my project.
+- **What was wrong with it:** It has a lots of flaws mainly because I don't know yet how to properly use SUPABASE
+- **What I did instead:** I removed it completly because I can't access my log in auth. screen. Because my code is not connecting on the SUPABASE.
+- **Commit:** https://github.com/Svintjohn/Aegis_FNL/commit/851c8083a2cfddd78f15f003526606f02061011a
 
 ## 3. Who wrote what
 
