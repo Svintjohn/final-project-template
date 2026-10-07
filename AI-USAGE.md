@@ -52,7 +52,7 @@ It gave ugly results and generic AI logo.
 - **Tool:** CLAUDE 
 - **What I asked for:** I asked how to integrate a SUPABASE on my project
 - **What it gave back:** It teaches me how to integrate it
-- **What I kept, what I changed, and why:** I removed it completely because I am having a hard time configuring SUPABASE 
+- **What I kept, what I changed, and why:** I removed it but then I figured out how to integrate it so I put it back.  
 - **Commit:** https://github.com/Svintjohn/Aegis_FNL/commit/851c8083a2cfddd78f15f003526606f02061011a
 
 ## 2. Where the AI got it wrong
@@ -126,12 +126,26 @@ I mostly wrote files under LIB and some I just ask for help to finalized and fix
 
 ### Written by me
 
-- **File:** 
+- **File:** I've written most of the file under lib, except main, common, moneyscreen, and home screen. 
 - **Commit:**
-- **What it does and why it is built this way:**
+- **What it does and why it is built this way:** These files implement the core data layer and most of the screens in
+Aegis. models.dart defines the data shapes, and store.dart is a
+single Riverpod Notifier that owns all app state and exposes every
+action as a method, so every screen reads from one source of truth
+instead of managing its own state. The screens built on top follow the
+same pattern — watch storeProvider, call a Store method — keeping
+UI code simple and consistent, while theme.dart centralizes the
+app's colors, type, and spacing in one place.
 
 ### The AI-written part I understand best
 
-- **File:**
+- **File:** Main.dart
 - **Commit:**
-- **What it does and why we kept it:**
+- **What it does and why we kept it:**This file wires up every screen in the app through go_router. Each
+route is just a path mapped to a screen widget — /login opens
+LoginScreen, /project/:id opens ProjectScreen with that project's
+id, and so on. We kept it as one central router instead of manual
+Navigator.push calls scattered across screens because it makes every
+navigable destination visible in one place, supports deep paths like
+/project/:id cleanly, and means a screen only needs to know the path
+string to navigate anywhere — not which widget class to import.
